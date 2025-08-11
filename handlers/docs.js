@@ -54,11 +54,9 @@ const swaggerOptions = {
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 // Imprime las rutas que encontró
 console.log('Rutas Swagger detectadas:', Object.keys(swaggerSpec.paths));
-// Imprime las rutas que encontró
-console.log('Rutas Swagger detectadas:', Object.keys(swaggerSpec.paths));
 
 export { swaggerSpec };
-// Handler para servir la interfaz Swagger UI
+
 export const handler = async (event, context) => {
   try {
     const html = `
@@ -170,7 +168,6 @@ export const handler = async (event, context) => {
   }
 };
 
-// Handler para servir la especificación JSON
 export const jsonHandler = async (event, context) => {
   try {
     return {

@@ -224,7 +224,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                  "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                  "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
                 },
                 "Handler": "handlers/login.handler",
                 "Runtime": "nodejs20.x",
@@ -256,7 +256,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                  "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                  "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
                 },
                 "Handler": "handlers/fusion.handler",
                 "Runtime": "nodejs20.x",
@@ -288,7 +288,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                  "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                  "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
                 },
                 "Handler": "handlers/store.handler",
                 "Runtime": "nodejs20.x",
@@ -320,7 +320,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                  "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                  "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
                 },
                 "Handler": "handlers/history.handler",
                 "Runtime": "nodejs20.x",
@@ -352,7 +352,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                  "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                  "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
                 },
                 "Handler": "lib/authMiddleware.requireAuth",
                 "Runtime": "nodejs20.x",
@@ -384,7 +384,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                  "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                  "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
                 },
                 "Handler": "handlers/docs.handler",
                 "Runtime": "nodejs20.x",
@@ -416,7 +416,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                  "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                  "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
                 },
                 "Handler": "handlers/docs.jsonHandler",
                 "Runtime": "nodejs20.x",
@@ -443,74 +443,74 @@
                 "DocsJsonLogGroup"
               ]
             },
-            "LoginLambdaVersioncWUp1NZik5yhbGgYAJLvoWBJyyMvpd4K8J0NkqoT3Pk": {
+            "LoginLambdaVersion4GEHPVdoKPq9MLLd2hF2kD5mJW0hRaDpaFTEQsw6M": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "LoginLambdaFunction"
                 },
-                "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+                "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
               }
             },
-            "GetFusionLambdaVersionBgILK9NS5g3wFSvJo7DjGogrFIX9ab7G7598UyYw": {
+            "GetFusionLambdaVersionrlocg3zqozgjANLZULtC3Q7VcipGqjeSDktJVF1v8": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetFusionLambdaFunction"
                 },
-                "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+                "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
               }
             },
-            "PostStoreLambdaVersionMPRhohWJIQgLlo4lrD0RWFEEPBvo8ArHvatTbmIehGw": {
+            "PostStoreLambdaVersion29U84NM6lhR89TSMohyEvxpjP0wHZrP9joFJAAoUZ4": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "PostStoreLambdaFunction"
                 },
-                "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+                "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
               }
             },
-            "GetHistoryLambdaVersionA0EgkBl2qdZev6I4M020orzdfUsz1CClgjr40ah0XNQ": {
+            "GetHistoryLambdaVersion7lNagptUrsrCmlF1DJzB2MW3bo8Y5FUrQoGIK6e6Qw": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetHistoryLambdaFunction"
                 },
-                "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+                "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
               }
             },
-            "JwtAuthorizerLambdaVersionO8w6N52wWph1U9AlwoppW1adFyPG91h2Mc7Q2JSwz2c": {
+            "JwtAuthorizerLambdaVersionUgUMK5bg6bgyaYfXD3YCwrTT42LotyXRaExq2wAEdTo": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "JwtAuthorizerLambdaFunction"
                 },
-                "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+                "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
               }
             },
-            "DocsLambdaVersionJrfLTSOiL4lc6yB4KwxjiYak99A1bao7qChWnuxK4w": {
+            "DocsLambdaVersionPry15VFkxjmXzEsvJPTk3jjxo7TzOC67mZPDburf78": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "DocsLambdaFunction"
                 },
-                "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+                "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
               }
             },
-            "DocsJsonLambdaVersion2yxBVJp0CsWpiwmpQkXAmXJy4lBbV8j2lZqVqBT3gI": {
+            "DocsJsonLambdaVersiondhRJ3fOYbE1pXXaiFlY88ply1IE3q0FkwbeNujdfwYA": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "DocsJsonLambdaFunction"
                 },
-                "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+                "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
               }
             },
             "ApiGatewayRestApi": {
@@ -1205,7 +1205,7 @@
                 "Type": "REQUEST"
               }
             },
-            "ApiGatewayDeployment1754885229691": {
+            "ApiGatewayDeployment1754891060860": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -1608,7 +1608,7 @@
             "LoginLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "LoginLambdaVersioncWUp1NZik5yhbGgYAJLvoWBJyyMvpd4K8J0NkqoT3Pk"
+                "Ref": "LoginLambdaVersion4GEHPVdoKPq9MLLd2hF2kD5mJW0hRaDpaFTEQsw6M"
               },
               "Export": {
                 "Name": "sls-swapi-weather-fusion-dev-LoginLambdaFunctionQualifiedArn"
@@ -1617,7 +1617,7 @@
             "GetFusionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetFusionLambdaVersionBgILK9NS5g3wFSvJo7DjGogrFIX9ab7G7598UyYw"
+                "Ref": "GetFusionLambdaVersionrlocg3zqozgjANLZULtC3Q7VcipGqjeSDktJVF1v8"
               },
               "Export": {
                 "Name": "sls-swapi-weather-fusion-dev-GetFusionLambdaFunctionQualifiedArn"
@@ -1626,7 +1626,7 @@
             "PostStoreLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "PostStoreLambdaVersionMPRhohWJIQgLlo4lrD0RWFEEPBvo8ArHvatTbmIehGw"
+                "Ref": "PostStoreLambdaVersion29U84NM6lhR89TSMohyEvxpjP0wHZrP9joFJAAoUZ4"
               },
               "Export": {
                 "Name": "sls-swapi-weather-fusion-dev-PostStoreLambdaFunctionQualifiedArn"
@@ -1635,7 +1635,7 @@
             "GetHistoryLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetHistoryLambdaVersionA0EgkBl2qdZev6I4M020orzdfUsz1CClgjr40ah0XNQ"
+                "Ref": "GetHistoryLambdaVersion7lNagptUrsrCmlF1DJzB2MW3bo8Y5FUrQoGIK6e6Qw"
               },
               "Export": {
                 "Name": "sls-swapi-weather-fusion-dev-GetHistoryLambdaFunctionQualifiedArn"
@@ -1644,7 +1644,7 @@
             "JwtAuthorizerLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "JwtAuthorizerLambdaVersionO8w6N52wWph1U9AlwoppW1adFyPG91h2Mc7Q2JSwz2c"
+                "Ref": "JwtAuthorizerLambdaVersionUgUMK5bg6bgyaYfXD3YCwrTT42LotyXRaExq2wAEdTo"
               },
               "Export": {
                 "Name": "sls-swapi-weather-fusion-dev-JwtAuthorizerLambdaFunctionQualifiedArn"
@@ -1653,7 +1653,7 @@
             "DocsLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "DocsLambdaVersionJrfLTSOiL4lc6yB4KwxjiYak99A1bao7qChWnuxK4w"
+                "Ref": "DocsLambdaVersionPry15VFkxjmXzEsvJPTk3jjxo7TzOC67mZPDburf78"
               },
               "Export": {
                 "Name": "sls-swapi-weather-fusion-dev-DocsLambdaFunctionQualifiedArn"
@@ -1662,7 +1662,7 @@
             "DocsJsonLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "DocsJsonLambdaVersion2yxBVJp0CsWpiwmpQkXAmXJy4lBbV8j2lZqVqBT3gI"
+                "Ref": "DocsJsonLambdaVersiondhRJ3fOYbE1pXXaiFlY88ply1IE3q0FkwbeNujdfwYA"
               },
               "Export": {
                 "Name": "sls-swapi-weather-fusion-dev-DocsJsonLambdaFunctionQualifiedArn"
@@ -1736,7 +1736,7 @@
           "timeout": 29,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "LoginLambdaVersioncWUp1NZik5yhbGgYAJLvoWBJyyMvpd4K8J0NkqoT3Pk"
+          "versionLogicalId": "LoginLambdaVersion4GEHPVdoKPq9MLLd2hF2kD5mJW0hRaDpaFTEQsw6M"
         },
         "getFusion": {
           "handler": "handlers/fusion.handler",
@@ -1786,7 +1786,7 @@
           "timeout": 29,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GetFusionLambdaVersionBgILK9NS5g3wFSvJo7DjGogrFIX9ab7G7598UyYw"
+          "versionLogicalId": "GetFusionLambdaVersionrlocg3zqozgjANLZULtC3Q7VcipGqjeSDktJVF1v8"
         },
         "postStore": {
           "handler": "handlers/store.handler",
@@ -1836,7 +1836,7 @@
           "timeout": 29,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "PostStoreLambdaVersionMPRhohWJIQgLlo4lrD0RWFEEPBvo8ArHvatTbmIehGw"
+          "versionLogicalId": "PostStoreLambdaVersion29U84NM6lhR89TSMohyEvxpjP0wHZrP9joFJAAoUZ4"
         },
         "getHistory": {
           "handler": "handlers/history.handler",
@@ -1886,7 +1886,7 @@
           "timeout": 29,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "GetHistoryLambdaVersionA0EgkBl2qdZev6I4M020orzdfUsz1CClgjr40ah0XNQ"
+          "versionLogicalId": "GetHistoryLambdaVersion7lNagptUrsrCmlF1DJzB2MW3bo8Y5FUrQoGIK6e6Qw"
         },
         "jwtAuthorizer": {
           "handler": "lib/authMiddleware.requireAuth",
@@ -1897,7 +1897,7 @@
           "timeout": 29,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "JwtAuthorizerLambdaVersionO8w6N52wWph1U9AlwoppW1adFyPG91h2Mc7Q2JSwz2c"
+          "versionLogicalId": "JwtAuthorizerLambdaVersionUgUMK5bg6bgyaYfXD3YCwrTT42LotyXRaExq2wAEdTo"
         },
         "docs": {
           "handler": "handlers/docs.handler",
@@ -1933,7 +1933,7 @@
           "timeout": 29,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "DocsLambdaVersionJrfLTSOiL4lc6yB4KwxjiYak99A1bao7qChWnuxK4w"
+          "versionLogicalId": "DocsLambdaVersionPry15VFkxjmXzEsvJPTk3jjxo7TzOC67mZPDburf78"
         },
         "docsJson": {
           "handler": "handlers/docs.jsonHandler",
@@ -1969,7 +1969,7 @@
           "timeout": 29,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "DocsJsonLambdaVersion2yxBVJp0CsWpiwmpQkXAmXJy4lBbV8j2lZqVqBT3gI"
+          "versionLogicalId": "DocsJsonLambdaVersiondhRJ3fOYbE1pXXaiFlY88ply1IE3q0FkwbeNujdfwYA"
         }
       },
       "resources": {
@@ -2365,7 +2365,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
               },
               "Handler": "handlers/login.handler",
               "Runtime": "nodejs20.x",
@@ -2397,7 +2397,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
               },
               "Handler": "handlers/fusion.handler",
               "Runtime": "nodejs20.x",
@@ -2429,7 +2429,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
               },
               "Handler": "handlers/store.handler",
               "Runtime": "nodejs20.x",
@@ -2461,7 +2461,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
               },
               "Handler": "handlers/history.handler",
               "Runtime": "nodejs20.x",
@@ -2493,7 +2493,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
               },
               "Handler": "lib/authMiddleware.requireAuth",
               "Runtime": "nodejs20.x",
@@ -2525,7 +2525,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
               },
               "Handler": "handlers/docs.handler",
               "Runtime": "nodejs20.x",
@@ -2557,7 +2557,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-                "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+                "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
               },
               "Handler": "handlers/docs.jsonHandler",
               "Runtime": "nodejs20.x",
@@ -2584,74 +2584,74 @@
               "DocsJsonLogGroup"
             ]
           },
-          "LoginLambdaVersioncWUp1NZik5yhbGgYAJLvoWBJyyMvpd4K8J0NkqoT3Pk": {
+          "LoginLambdaVersion4GEHPVdoKPq9MLLd2hF2kD5mJW0hRaDpaFTEQsw6M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "LoginLambdaFunction"
               },
-              "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+              "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
             }
           },
-          "GetFusionLambdaVersionBgILK9NS5g3wFSvJo7DjGogrFIX9ab7G7598UyYw": {
+          "GetFusionLambdaVersionrlocg3zqozgjANLZULtC3Q7VcipGqjeSDktJVF1v8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetFusionLambdaFunction"
               },
-              "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+              "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
             }
           },
-          "PostStoreLambdaVersionMPRhohWJIQgLlo4lrD0RWFEEPBvo8ArHvatTbmIehGw": {
+          "PostStoreLambdaVersion29U84NM6lhR89TSMohyEvxpjP0wHZrP9joFJAAoUZ4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PostStoreLambdaFunction"
               },
-              "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+              "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
             }
           },
-          "GetHistoryLambdaVersionA0EgkBl2qdZev6I4M020orzdfUsz1CClgjr40ah0XNQ": {
+          "GetHistoryLambdaVersion7lNagptUrsrCmlF1DJzB2MW3bo8Y5FUrQoGIK6e6Qw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetHistoryLambdaFunction"
               },
-              "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+              "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
             }
           },
-          "JwtAuthorizerLambdaVersionO8w6N52wWph1U9AlwoppW1adFyPG91h2Mc7Q2JSwz2c": {
+          "JwtAuthorizerLambdaVersionUgUMK5bg6bgyaYfXD3YCwrTT42LotyXRaExq2wAEdTo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "JwtAuthorizerLambdaFunction"
               },
-              "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+              "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
             }
           },
-          "DocsLambdaVersionJrfLTSOiL4lc6yB4KwxjiYak99A1bao7qChWnuxK4w": {
+          "DocsLambdaVersionPry15VFkxjmXzEsvJPTk3jjxo7TzOC67mZPDburf78": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DocsLambdaFunction"
               },
-              "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+              "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
             }
           },
-          "DocsJsonLambdaVersion2yxBVJp0CsWpiwmpQkXAmXJy4lBbV8j2lZqVqBT3gI": {
+          "DocsJsonLambdaVersiondhRJ3fOYbE1pXXaiFlY88ply1IE3q0FkwbeNujdfwYA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DocsJsonLambdaFunction"
               },
-              "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+              "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
             }
           },
           "ApiGatewayRestApi": {
@@ -3346,7 +3346,7 @@
               "Type": "REQUEST"
             }
           },
-          "ApiGatewayDeployment1754885229691": {
+          "ApiGatewayDeployment1754891060860": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -3749,7 +3749,7 @@
           "LoginLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "LoginLambdaVersioncWUp1NZik5yhbGgYAJLvoWBJyyMvpd4K8J0NkqoT3Pk"
+              "Ref": "LoginLambdaVersion4GEHPVdoKPq9MLLd2hF2kD5mJW0hRaDpaFTEQsw6M"
             },
             "Export": {
               "Name": "sls-swapi-weather-fusion-dev-LoginLambdaFunctionQualifiedArn"
@@ -3758,7 +3758,7 @@
           "GetFusionLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetFusionLambdaVersionBgILK9NS5g3wFSvJo7DjGogrFIX9ab7G7598UyYw"
+              "Ref": "GetFusionLambdaVersionrlocg3zqozgjANLZULtC3Q7VcipGqjeSDktJVF1v8"
             },
             "Export": {
               "Name": "sls-swapi-weather-fusion-dev-GetFusionLambdaFunctionQualifiedArn"
@@ -3767,7 +3767,7 @@
           "PostStoreLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PostStoreLambdaVersionMPRhohWJIQgLlo4lrD0RWFEEPBvo8ArHvatTbmIehGw"
+              "Ref": "PostStoreLambdaVersion29U84NM6lhR89TSMohyEvxpjP0wHZrP9joFJAAoUZ4"
             },
             "Export": {
               "Name": "sls-swapi-weather-fusion-dev-PostStoreLambdaFunctionQualifiedArn"
@@ -3776,7 +3776,7 @@
           "GetHistoryLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetHistoryLambdaVersionA0EgkBl2qdZev6I4M020orzdfUsz1CClgjr40ah0XNQ"
+              "Ref": "GetHistoryLambdaVersion7lNagptUrsrCmlF1DJzB2MW3bo8Y5FUrQoGIK6e6Qw"
             },
             "Export": {
               "Name": "sls-swapi-weather-fusion-dev-GetHistoryLambdaFunctionQualifiedArn"
@@ -3785,7 +3785,7 @@
           "JwtAuthorizerLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "JwtAuthorizerLambdaVersionO8w6N52wWph1U9AlwoppW1adFyPG91h2Mc7Q2JSwz2c"
+              "Ref": "JwtAuthorizerLambdaVersionUgUMK5bg6bgyaYfXD3YCwrTT42LotyXRaExq2wAEdTo"
             },
             "Export": {
               "Name": "sls-swapi-weather-fusion-dev-JwtAuthorizerLambdaFunctionQualifiedArn"
@@ -3794,7 +3794,7 @@
           "DocsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DocsLambdaVersionJrfLTSOiL4lc6yB4KwxjiYak99A1bao7qChWnuxK4w"
+              "Ref": "DocsLambdaVersionPry15VFkxjmXzEsvJPTk3jjxo7TzOC67mZPDburf78"
             },
             "Export": {
               "Name": "sls-swapi-weather-fusion-dev-DocsLambdaFunctionQualifiedArn"
@@ -3803,7 +3803,7 @@
           "DocsJsonLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DocsJsonLambdaVersion2yxBVJp0CsWpiwmpQkXAmXJy4lBbV8j2lZqVqBT3gI"
+              "Ref": "DocsJsonLambdaVersiondhRJ3fOYbE1pXXaiFlY88ply1IE3q0FkwbeNujdfwYA"
             },
             "Export": {
               "Name": "sls-swapi-weather-fusion-dev-DocsJsonLambdaFunctionQualifiedArn"
@@ -3864,48 +3864,48 @@
     "serviceProviderAwsCfStackName": "swapi-weather-fusion-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:399605429268:stack/swapi-weather-fusion-dev/1a3ec1b0-7596-11f0-a8ab-123a81415df7",
     "serviceProviderAwsCfStackCreated": "2025-08-10T02:59:59.557Z",
-    "serviceProviderAwsCfStackUpdated": "2025-08-11T04:05:18.636Z",
+    "serviceProviderAwsCfStackUpdated": "2025-08-11T05:41:38.850Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "DocsLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-docs:7",
+        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-docs:14",
         "Description": "Current Lambda function version",
         "ExportName": "sls-swapi-weather-fusion-dev-DocsLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "DocsJsonLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-docsJson:6",
+        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-docsJson:13",
         "Description": "Current Lambda function version",
         "ExportName": "sls-swapi-weather-fusion-dev-DocsJsonLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "JwtAuthorizerLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-jwtAuthorizer:12",
+        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-jwtAuthorizer:19",
         "Description": "Current Lambda function version",
         "ExportName": "sls-swapi-weather-fusion-dev-JwtAuthorizerLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetHistoryLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-getHistory:30",
+        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-getHistory:37",
         "Description": "Current Lambda function version",
         "ExportName": "sls-swapi-weather-fusion-dev-GetHistoryLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetFusionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-getFusion:30",
+        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-getFusion:37",
         "Description": "Current Lambda function version",
         "ExportName": "sls-swapi-weather-fusion-dev-GetFusionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "PostStoreLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-postStore:30",
+        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-postStore:37",
         "Description": "Current Lambda function version",
         "ExportName": "sls-swapi-weather-fusion-dev-PostStoreLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "LoginLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-login:12",
+        "OutputValue": "arn:aws:lambda:us-east-1:399605429268:function:swapi-weather-fusion-dev-login:19",
         "Description": "Current Lambda function version",
         "ExportName": "sls-swapi-weather-fusion-dev-LoginLambdaFunctionQualifiedArn"
       },
@@ -4083,7 +4083,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-              "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+              "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
             },
             "Handler": "handlers/login.handler",
             "Runtime": "nodejs20.x",
@@ -4115,7 +4115,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-              "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+              "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
             },
             "Handler": "handlers/fusion.handler",
             "Runtime": "nodejs20.x",
@@ -4147,7 +4147,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-              "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+              "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
             },
             "Handler": "handlers/store.handler",
             "Runtime": "nodejs20.x",
@@ -4179,7 +4179,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-              "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+              "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
             },
             "Handler": "handlers/history.handler",
             "Runtime": "nodejs20.x",
@@ -4211,7 +4211,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-              "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+              "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
             },
             "Handler": "lib/authMiddleware.requireAuth",
             "Runtime": "nodejs20.x",
@@ -4243,7 +4243,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-              "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+              "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
             },
             "Handler": "handlers/docs.handler",
             "Runtime": "nodejs20.x",
@@ -4275,7 +4275,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "swapi-weather-fusion-deploy-bucket",
-              "S3Key": "serverless/swapi-weather-fusion/dev/1754885237993-2025-08-11T04:07:17.993Z/swapi-weather-fusion.zip"
+              "S3Key": "serverless/swapi-weather-fusion/dev/1754891069550-2025-08-11T05:44:29.550Z/swapi-weather-fusion.zip"
             },
             "Handler": "handlers/docs.jsonHandler",
             "Runtime": "nodejs20.x",
@@ -4302,74 +4302,74 @@
             "DocsJsonLogGroup"
           ]
         },
-        "LoginLambdaVersioncWUp1NZik5yhbGgYAJLvoWBJyyMvpd4K8J0NkqoT3Pk": {
+        "LoginLambdaVersion4GEHPVdoKPq9MLLd2hF2kD5mJW0hRaDpaFTEQsw6M": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "LoginLambdaFunction"
             },
-            "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+            "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
           }
         },
-        "GetFusionLambdaVersionBgILK9NS5g3wFSvJo7DjGogrFIX9ab7G7598UyYw": {
+        "GetFusionLambdaVersionrlocg3zqozgjANLZULtC3Q7VcipGqjeSDktJVF1v8": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "GetFusionLambdaFunction"
             },
-            "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+            "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
           }
         },
-        "PostStoreLambdaVersionMPRhohWJIQgLlo4lrD0RWFEEPBvo8ArHvatTbmIehGw": {
+        "PostStoreLambdaVersion29U84NM6lhR89TSMohyEvxpjP0wHZrP9joFJAAoUZ4": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "PostStoreLambdaFunction"
             },
-            "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+            "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
           }
         },
-        "GetHistoryLambdaVersionA0EgkBl2qdZev6I4M020orzdfUsz1CClgjr40ah0XNQ": {
+        "GetHistoryLambdaVersion7lNagptUrsrCmlF1DJzB2MW3bo8Y5FUrQoGIK6e6Qw": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "GetHistoryLambdaFunction"
             },
-            "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+            "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
           }
         },
-        "JwtAuthorizerLambdaVersionO8w6N52wWph1U9AlwoppW1adFyPG91h2Mc7Q2JSwz2c": {
+        "JwtAuthorizerLambdaVersionUgUMK5bg6bgyaYfXD3YCwrTT42LotyXRaExq2wAEdTo": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "JwtAuthorizerLambdaFunction"
             },
-            "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+            "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
           }
         },
-        "DocsLambdaVersionJrfLTSOiL4lc6yB4KwxjiYak99A1bao7qChWnuxK4w": {
+        "DocsLambdaVersionPry15VFkxjmXzEsvJPTk3jjxo7TzOC67mZPDburf78": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "DocsLambdaFunction"
             },
-            "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+            "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
           }
         },
-        "DocsJsonLambdaVersion2yxBVJp0CsWpiwmpQkXAmXJy4lBbV8j2lZqVqBT3gI": {
+        "DocsJsonLambdaVersiondhRJ3fOYbE1pXXaiFlY88ply1IE3q0FkwbeNujdfwYA": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "DocsJsonLambdaFunction"
             },
-            "CodeSha256": "4sjJUVAOb2MbHAz/nyLMyeFIVn65BMUXe5djg+C+amE="
+            "CodeSha256": "sTlyMr5/5VnU4fgsJPqAtC3CjFGgQBo7Wi/riJ8btHM="
           }
         },
         "ApiGatewayRestApi": {
@@ -5064,7 +5064,7 @@
             "Type": "REQUEST"
           }
         },
-        "ApiGatewayDeployment1754885229691": {
+        "ApiGatewayDeployment1754891060860": {
           "Type": "AWS::ApiGateway::Deployment",
           "Properties": {
             "RestApiId": {
@@ -5467,7 +5467,7 @@
         "LoginLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "LoginLambdaVersioncWUp1NZik5yhbGgYAJLvoWBJyyMvpd4K8J0NkqoT3Pk"
+            "Ref": "LoginLambdaVersion4GEHPVdoKPq9MLLd2hF2kD5mJW0hRaDpaFTEQsw6M"
           },
           "Export": {
             "Name": "sls-swapi-weather-fusion-dev-LoginLambdaFunctionQualifiedArn"
@@ -5476,7 +5476,7 @@
         "GetFusionLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "GetFusionLambdaVersionBgILK9NS5g3wFSvJo7DjGogrFIX9ab7G7598UyYw"
+            "Ref": "GetFusionLambdaVersionrlocg3zqozgjANLZULtC3Q7VcipGqjeSDktJVF1v8"
           },
           "Export": {
             "Name": "sls-swapi-weather-fusion-dev-GetFusionLambdaFunctionQualifiedArn"
@@ -5485,7 +5485,7 @@
         "PostStoreLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "PostStoreLambdaVersionMPRhohWJIQgLlo4lrD0RWFEEPBvo8ArHvatTbmIehGw"
+            "Ref": "PostStoreLambdaVersion29U84NM6lhR89TSMohyEvxpjP0wHZrP9joFJAAoUZ4"
           },
           "Export": {
             "Name": "sls-swapi-weather-fusion-dev-PostStoreLambdaFunctionQualifiedArn"
@@ -5494,7 +5494,7 @@
         "GetHistoryLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "GetHistoryLambdaVersionA0EgkBl2qdZev6I4M020orzdfUsz1CClgjr40ah0XNQ"
+            "Ref": "GetHistoryLambdaVersion7lNagptUrsrCmlF1DJzB2MW3bo8Y5FUrQoGIK6e6Qw"
           },
           "Export": {
             "Name": "sls-swapi-weather-fusion-dev-GetHistoryLambdaFunctionQualifiedArn"
@@ -5503,7 +5503,7 @@
         "JwtAuthorizerLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "JwtAuthorizerLambdaVersionO8w6N52wWph1U9AlwoppW1adFyPG91h2Mc7Q2JSwz2c"
+            "Ref": "JwtAuthorizerLambdaVersionUgUMK5bg6bgyaYfXD3YCwrTT42LotyXRaExq2wAEdTo"
           },
           "Export": {
             "Name": "sls-swapi-weather-fusion-dev-JwtAuthorizerLambdaFunctionQualifiedArn"
@@ -5512,7 +5512,7 @@
         "DocsLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "DocsLambdaVersionJrfLTSOiL4lc6yB4KwxjiYak99A1bao7qChWnuxK4w"
+            "Ref": "DocsLambdaVersionPry15VFkxjmXzEsvJPTk3jjxo7TzOC67mZPDburf78"
           },
           "Export": {
             "Name": "sls-swapi-weather-fusion-dev-DocsLambdaFunctionQualifiedArn"
@@ -5521,7 +5521,7 @@
         "DocsJsonLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "DocsJsonLambdaVersion2yxBVJp0CsWpiwmpQkXAmXJy4lBbV8j2lZqVqBT3gI"
+            "Ref": "DocsJsonLambdaVersiondhRJ3fOYbE1pXXaiFlY88ply1IE3q0FkwbeNujdfwYA"
           },
           "Export": {
             "Name": "sls-swapi-weather-fusion-dev-DocsJsonLambdaFunctionQualifiedArn"

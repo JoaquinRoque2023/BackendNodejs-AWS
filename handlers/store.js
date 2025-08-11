@@ -1,5 +1,8 @@
-import { putCustom } from "../lib/dynamo.js";
-import { v4 as uuidv4 } from "uuid";
+
+import logger from '../lib/logger.js';
+import { putCustom } from '../lib/dynamo.js';
+import { v4 as uuidv4 } from 'uuid';
+
 /**
  * @openapi
  * /almacenar:
@@ -103,15 +106,19 @@ import { v4 as uuidv4 } from "uuid";
  *                   example: "Error message"
  */
 
+
 export const handler = async (event) => {
   try {
+    logger.info('Invocación del handler /almacenar', { event });
+
     if (!event.body) {
+      logger.warn('Falta body en la petición');
       return { statusCode: 400, body: JSON.stringify({ message: "body required" }) };
     }
     
     const body = JSON.parse(event.body);
     const id = uuidv4();
-    
+
     const item = {
       pk: `CUSTOM#${id}`, // Clave primaria
       sk: `ITEM#${new Date().toISOString()}`, // Clave de ordenamiento
@@ -119,10 +126,16 @@ export const handler = async (event) => {
       createdAt: new Date().toISOString(),
       ...body
     };
-    
+
+    logger.info('Guardando item en la base de datos', { item });
+
     await putCustom(item);
+
+    logger.info('Item almacenado correctamente', { id });
+
     return { statusCode: 201, body: JSON.stringify({ message: "stored", item }) };
   } catch (err) {
+    logger.error('Error en handler /almacenar', { errorMessage: err.message, stack: err.stack });
     return { statusCode: 500, body: JSON.stringify({ message: err.message }) };
   }
 };
