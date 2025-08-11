@@ -6,18 +6,18 @@ provider:
   name: aws
   runtime: nodejs20.x
   region: us-east-1
-  # Optimizaciones de costos
-  memorySize: 512  # Ajustado para mejor rendimiento/costo
-  timeout: 29      # Máximo para API Gateway (cambiado de 30 a 29)
+  memorySize: 512
+  timeout: 29
   deploymentBucket:
-    name: swapi-weather-fusion-deploy-bucket # Debe ser único en todo AWS
+    name: swapi-weather-fusion-deploy-bucket
   disableRollback: true
   
   environment:
     FUSION_TABLE: ${self:service}-FusionTable
     CACHE_TABLE: ${self:service}-CacheTable
-    CUSTOM_TABLE: ${self:service}-CustomTableV2  # Cambiado el nombre
-    NODE_OPTIONS: '--enable-source-maps'  # Para mejor debugging
+    CUSTOM_TABLE: ${self:service}-CustomTableV2
+    NODE_OPTIONS: '--enable-source-maps'
+    JWT_SECRET: SofttekSecretKey
     
   iamRoleStatements:
     - Effect: Allow
@@ -29,7 +29,7 @@ provider:
       Resource:
         - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-FusionTable
         - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-CacheTable
-        - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-CustomTableV2  # Cambiado aquí también
+        - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-CustomTableV2
     - Effect: Allow
       Action:
         - s3:GetObject
@@ -47,7 +47,15 @@ plugins:
   - serverless-offline
 
 functions:
-  # GET /fusionados - Fusiona datos de SWAPI y API meteorológica
+  # LOGIN: Genera y devuelve un JWT
+  login:
+    handler: handlers/login.handler
+    events:
+      - http:
+          path: login
+          method: post
+          cors: true
+  
   getFusion:
     handler: handlers/fusion.handler
     events:
@@ -55,8 +63,11 @@ functions:
           path: fusionados
           method: get
           cors: true
+          authorizer:
+            name: jwtAuthorizer
+            type: REQUEST
+            identitySource: method.request.header.Authorization
     
-  # POST /almacenar - Almacena datos personalizados
   postStore:
     handler: handlers/store.handler
     events:
@@ -64,8 +75,11 @@ functions:
           path: almacenar
           method: post
           cors: true
+          authorizer:
+            name: jwtAuthorizer
+            type: REQUEST
+            identitySource: method.request.header.Authorization
     
-  # GET /historial - Retorna historial paginado
   getHistory:
     handler: handlers/history.handler
     events:
@@ -73,10 +87,33 @@ functions:
           path: historial
           method: get
           cors: true
+          authorizer:
+            name: jwtAuthorizer
+            type: REQUEST
+            identitySource: method.request.header.Authorization
 
+  # Authorizer Lambda para validar JWT
+  jwtAuthorizer:
+    handler: lib/authMiddleware.requireAuth
+
+  docs:
+    handler: handlers/docs.handler
+    events:
+      - http:
+          path: docs
+          method: get
+          cors: true
+          
+  docsJson:
+    handler: handlers/docs.jsonHandler
+    events:
+      - http:
+          path: docs.json
+          method: get
+          cors: true
+           
 resources:
   Resources:
-    # Tabla para datos fusionados (historial de /fusionados)
     FusionTable:
       Type: AWS::DynamoDB::Table
       Properties:
@@ -93,14 +130,13 @@ resources:
           - AttributeName: sk
             KeyType: RANGE
         PointInTimeRecoverySpecification:
-          PointInTimeRecoveryEnabled: false  # Deshabilitado para reducir costos
+          PointInTimeRecoveryEnabled: false
         Tags:
           - Key: Purpose
             Value: FusionDataStorage
           - Key: Service
             Value: ${self:service}
 
-    # Tabla para caché con TTL
     CacheTable:
       Type: AWS::DynamoDB::Table
       Properties:
@@ -121,11 +157,10 @@ resources:
           - Key: Service
             Value: ${self:service}
 
-    # Tabla para datos personalizados (RENOMBRADA)
     CustomTableV2:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:service}-CustomTableV2  # Nuevo nombre
+        TableName: ${self:service}-CustomTableV2
         BillingMode: PAY_PER_REQUEST
         AttributeDefinitions:
           - AttributeName: pk
@@ -142,3 +177,38 @@ resources:
             Value: CustomDataStorage
           - Key: Service
             Value: ${self:service}
+custom:
+  documentation:
+    api:
+      info:
+        version: '1.0.0'
+        title: SWAPI Weather Fusion API
+        description: 'API que fusiona datos de Star Wars (SWAPI) con información meteorológica'
+        contact:
+          name: Equipo Softtek
+          email: soporte@softtek.com
+        license:
+          name: MIT
+          url: https://opensource.org/licenses/MIT
+      servers:
+        - url: https://api.gateway.url
+          description: Servidor de producción
+        - url: http://localhost:3000
+          description: Servidor local
+      components:
+        securitySchemes:
+          bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+      tags:
+        - name: Authentication
+          description: Operaciones de autenticación
+        - name: Fusion Data
+          description: Datos combinados SWAPI + Weather
+        - name: Data Storage
+          description: Almacenamiento de datos personalizados
+        - name: History
+          description: Historial de operaciones
+        - name: Documentation
+          description: Documentación de la API

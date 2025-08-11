@@ -4,6 +4,203 @@ import { getCurrentWeather } from "../lib/weather.js";
 import { mapPlanetToCoords } from "../lib/util.js";
 import { getCache, putCache, putFusion } from "../lib/dynamo.js";
 import { v4 as uuidv4 } from "uuid";
+/**
+ * @openapi
+ * /fusionados:
+ *   get:
+ *     summary: Obtiene datos fusionados de Star Wars y clima actual
+ *     description: Recupera información combinada de un personaje de Star Wars, su planeta de origen y el clima actual basado en un mapeo a coordenadas terrestres.
+ *     parameters:
+ *       - in: query
+ *         name: nombre
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Nombre o término de búsqueda para el personaje
+ *         example: luke
+ *     responses:
+ *       200:
+ *         description: Datos fusionados exitosamente desde APIs externas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 source:
+ *                   type: string
+ *                   example: apis_externas
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: string
+ *                       format: uuid
+ *                       example: 4f85a1a6-4e51-4c9f-9f2a-5d8a2427003b
+ *                     personaje:
+ *                       type: object
+ *                       properties:
+ *                         nombre:
+ *                           type: string
+ *                           example: Luke Skywalker
+ *                         altura_cm:
+ *                           type: integer
+ *                           example: 172
+ *                         peso_kg:
+ *                           type: integer
+ *                           example: 77
+ *                         genero:
+ *                           type: string
+ *                           example: male
+ *                         año_nacimiento:
+ *                           type: string
+ *                           example: 19BBY
+ *                         color_cabello:
+ *                           type: string
+ *                           example: blond
+ *                         color_ojos:
+ *                           type: string
+ *                           example: blue
+ *                         color_piel:
+ *                           type: string
+ *                           example: fair
+ *                     planeta_origen:
+ *                       type: object
+ *                       properties:
+ *                         nombre:
+ *                           type: string
+ *                           example: Tatooine
+ *                         clima:
+ *                           type: string
+ *                           example: arid
+ *                         terreno:
+ *                           type: string
+ *                           example: desert
+ *                         poblacion:
+ *                           type: integer
+ *                           example: 200000
+ *                         diametro_km:
+ *                           type: integer
+ *                           example: 10465
+ *                         periodo_rotacion_horas:
+ *                           type: integer
+ *                           example: 23
+ *                         periodo_orbital_dias:
+ *                           type: integer
+ *                           example: 304
+ *                         gravedad:
+ *                           type: string
+ *                           example: 1 standard
+ *                     clima_actual:
+ *                       type: object
+ *                       properties:
+ *                         disponible:
+ *                           type: boolean
+ *                           example: true
+ *                         ubicacion:
+ *                           type: object
+ *                           properties:
+ *                             coordenadas_terrestres:
+ *                               type: object
+ *                               properties:
+ *                                 lat:
+ *                                   type: number
+ *                                   example: 25
+ *                                 lon:
+ *                                   type: number
+ *                                   example: 35
+ *                                 terrestrial_equivalent:
+ *                                   type: string
+ *                                   example: Desierto de Arabia
+ *                                 expected_climate:
+ *                                   type: string
+ *                                   example: desert
+ *                             planeta_origen:
+ *                               type: string
+ *                               example: Tatooine
+ *                             mapeo_justificacion:
+ *                               type: string
+ *                               example: Coordenadas terrestres aproximadas para el planeta Tatooine
+ *                         condiciones:
+ *                           type: object
+ *                         consultado_en:
+ *                           type: string
+ *                           format: date-time
+ *                           example: 2025-08-11T00:54:28.394Z
+ *                     metadatos_fusion:
+ *                       type: object
+ *                       properties:
+ *                         termino_busqueda:
+ *                           type: string
+ *                           example: luke
+ *                         apis_consultadas:
+ *                           type: array
+ *                           items:
+ *                             type: string
+ *                           example:
+ *                             - SWAPI (Star Wars API)
+ *                             - API Meteorológica
+ *                         estrategia_fusion:
+ *                           type: string
+ *                           example: Mapeo de planetas ficticios a coordenadas terrestres para obtener clima real
+ *                         calidad_datos:
+ *                           type: object
+ *                           properties:
+ *                             personaje_completo:
+ *                               type: boolean
+ *                               example: true
+ *                             planeta_disponible:
+ *                               type: boolean
+ *                               example: true
+ *                             clima_disponible:
+ *                               type: boolean
+ *                               example: true
+ *                             porcentaje_completitud:
+ *                               type: integer
+ *                               example: 100
+ *                         tiempo_cache_minutos:
+ *                           type: integer
+ *                           example: 30
+ *                     consultado_en:
+ *                       type: string
+ *                       format: date-time
+ *                       example: 2025-08-11T00:54:28.394Z
+ *                     expira_en:
+ *                       type: string
+ *                       format: date-time
+ *                       example: 2025-08-11T01:24:28.394Z
+ *                     version_api:
+ *                       type: string
+ *                       example: "1.0"
+ *                 message:
+ *                   type: string
+ *                   example: Datos fusionados exitosamente desde APIs externas
+ *                 cached_for_minutes:
+ *                   type: integer
+ *                   example: 30
+ *       400:
+ *         description: Parámetro nombre requerido
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Parámetro nombre requerido
+ *       500:
+ *         description: Error interno del servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Error interno del servidor
+ */
 
 // Configuración de caché (30 minutos como especifica la prueba)
 const CACHE_TTL_SECONDS = 30 * 60;

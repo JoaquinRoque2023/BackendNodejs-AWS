@@ -14,7 +14,11 @@
     "@aws-sdk/client-dynamodb": "^3.864.0",
     "@aws-sdk/lib-dynamodb": "^3.864.0",
     "dotenv": "^17.2.1",
-    "node-fetch": "^3.3.2"
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2",
+    "serverless-http": "^3.2.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "serverless-offline": "^14.4.0"
