@@ -1,0 +1,144 @@
+org: joaquinproyecto
+app: proyectosofttek
+service: swapi-weather-fusion
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  # Optimizaciones de costos
+  memorySize: 512  # Ajustado para mejor rendimiento/costo
+  timeout: 29      # Máximo para API Gateway (cambiado de 30 a 29)
+  deploymentBucket:
+    name: swapi-weather-fusion-deploy-bucket # Debe ser único en todo AWS
+  disableRollback: true
+  
+  environment:
+    FUSION_TABLE: ${self:service}-FusionTable
+    CACHE_TABLE: ${self:service}-CacheTable
+    CUSTOM_TABLE: ${self:service}-CustomTableV2  # Cambiado el nombre
+    NODE_OPTIONS: '--enable-source-maps'  # Para mejor debugging
+    
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:Scan
+        - dynamodb:Query
+      Resource:
+        - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-FusionTable
+        - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-CacheTable
+        - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-CustomTableV2  # Cambiado aquí también
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource:
+        - arn:aws:s3:::swapi-weather-fusion-deploy-bucket-joaquin-001
+        - arn:aws:s3:::swapi-weather-fusion-deploy-bucket-joaquin-001/*
+    - Effect: Allow
+      Action:
+        - ssm:GetParameter
+        - ssm:PutParameter
+      Resource: "*"
+
+plugins:
+  - serverless-offline
+
+functions:
+  # GET /fusionados - Fusiona datos de SWAPI y API meteorológica
+  getFusion:
+    handler: handlers/fusion.handler
+    events:
+      - http:
+          path: fusionados
+          method: get
+          cors: true
+    
+  # POST /almacenar - Almacena datos personalizados
+  postStore:
+    handler: handlers/store.handler
+    events:
+      - http:
+          path: almacenar
+          method: post
+          cors: true
+    
+  # GET /historial - Retorna historial paginado
+  getHistory:
+    handler: handlers/history.handler
+    events:
+      - http:
+          path: historial
+          method: get
+          cors: true
+
+resources:
+  Resources:
+    # Tabla para datos fusionados (historial de /fusionados)
+    FusionTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-FusionTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: pk
+            AttributeType: S
+          - AttributeName: sk
+            AttributeType: S
+        KeySchema:
+          - AttributeName: pk
+            KeyType: HASH
+          - AttributeName: sk
+            KeyType: RANGE
+        PointInTimeRecoverySpecification:
+          PointInTimeRecoveryEnabled: false  # Deshabilitado para reducir costos
+        Tags:
+          - Key: Purpose
+            Value: FusionDataStorage
+          - Key: Service
+            Value: ${self:service}
+
+    # Tabla para caché con TTL
+    CacheTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-CacheTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: cacheKey
+            AttributeType: S
+        KeySchema:
+          - AttributeName: cacheKey
+            KeyType: HASH
+        TimeToLiveSpecification:
+          AttributeName: expiresAt
+          Enabled: true
+        Tags:
+          - Key: Purpose
+            Value: APICache
+          - Key: Service
+            Value: ${self:service}
+
+    # Tabla para datos personalizados (RENOMBRADA)
+    CustomTableV2:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-CustomTableV2  # Nuevo nombre
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: pk
+            AttributeType: S
+          - AttributeName: sk
+            AttributeType: S
+        KeySchema:
+          - AttributeName: pk
+            KeyType: HASH
+          - AttributeName: sk
+            KeyType: RANGE
+        Tags:
+          - Key: Purpose
+            Value: CustomDataStorage
+          - Key: Service
+            Value: ${self:service}
